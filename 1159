@@ -1,0 +1,34 @@
+#include <stdio.h>
+//！while后不加；
+int fun(int n, int m) {
+	int count=0,sum=0;
+	int a=0;
+	int i,j,z;
+	while(count<n) {
+		if((n-count)>=m) {
+			sum=0;
+			for(i=0; i<m; i++) {
+				a += 2;
+				sum += a;
+				count++;
+			}
+			printf("%d ",sum/m);
+		} else {
+			sum=0;
+			z=n-count;
+			for(j=0; j<z; j++) {
+				a += 2;
+				sum += a;
+				count++;
+			}
+			printf("%d \n",sum/z);
+		}
+	}
+}
+
+int main() {
+	int n,m;
+	while((scanf("%d%d",&n,&m) )!= EOF)
+	fun(n,m);
+	return 0;
+}
